@@ -1,0 +1,15 @@
+{% extends 'biotools/base.html'%}
+{% block 'content' %}
+
+
+
+<h3>{{note}}</h3>
+<h2>On the second thought?</h2>
+        <form method="POST" action="{% url 'seq_info' %}">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <input type="submit" value="Change Pizza">
+        </form>
+
+{% endblock %}
